@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <p v-show="!isTrying">Welcome To Endless Typing Course!</p>
+      <p v-show="!isTrying">Click to Start</p>
+      <!-- <p v-show="isTrying">第{{ currentWordNumber }}問</p> -->
+      <p id="target">{{ iscurrentWord.title }}</p>
+      <p>{{ iscurrentWord.meaning }}</p>
+      <p v-show="isTrying" class="info">
+        Letter count: <span id="score">{{score}}</span>,
+        Miss count: <span id="miss">{{miss}}</span>
+      </p>
+      <button class="retry-btn" v-show="isTrying" @click="restart()">Retry??</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+    <script src="words.js"></script>
+    <script src="main.js"></script>
+  </body>
+  
+</html>
